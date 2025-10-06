@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        code {
+            font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<pre><code>
+i = int(input("Enter how many numbers you want to enter: "))
+k = []
+
+for j in range(i):
+    if j == 0:
+        k.append(int(input(f"Enter the {j+1}st number: ")))
+    elif j == 1:
+        k.append(int(input(f"Enter the {j+1}nd number: ")))
+    elif j == 2:
+        k.append(int(input(f"Enter the {j+1}rd number: ")))
+    else:
+        k.append(int(input(f"Enter the {j+1}th number: ")))
+
+while True:
+    g = input(f"Enter the operation (+,-,/,*,**,//,%) you want to do with all {i} numbers (or type 'exit'): ")
+
+    if g == "exit":
+        print("Goodbye!")
+        break
+
+    s = k[0]
+
+    if g == "+":
+        for e in range(1, i):
+            s = s + k[e]
+        print("Result =", s)
+
+    elif g == "-":
+        for e in range(1, i):
+            s = s - k[e]
+        print("Result =", s)
+
+    elif g == "*":
+        for e in range(1, i):
+            s = s * k[e]
+        print("Result =", s)
+
+    elif g == "/":
+        for e in range(1, i):
+            s = s / k[e]
+        print("Result =", s)
+
+    elif g == "//":
+        for e in range(1, i):
+            s = s // k[e]
+        print("Result =", s)
+
+    elif g == "%":
+        for e in range(1, i):
+            s = s % k[e]
+        print("Result =", s)
+
+    elif g == "**":
+        for e in range(1, i):
+            s = s ** k[e]
+        print("Result =", s)
+
+    else:
+        print("Invalid input, please input again.")
+</code></pre>
+
+</body>
+</html>

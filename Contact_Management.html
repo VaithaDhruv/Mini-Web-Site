@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Managerr</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        code {
+            font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<pre><code>
+contacts=[]
+k=0
+while k==0:
+    i=input("Enter either \"exit\",\"view\",\"search\" or \"add\":\n")
+    if i=="add":
+        name=input("Enter the name:")
+        phone=int(input("Enter the phone number:"))
+        email=input("Enter the Email Id:")
+        u={"name":name,"phone":phone,"email":email}
+        contacts.append(u)
+    elif i=="exit":
+        k=1
+        print("Goodbye!")
+    elif i=="search":
+        search_name = input("Enter the name to search for: ")
+        found_contact = False
+        for cont in contacts:
+            if cont["name"] == search_name:
+                print(f"--- Contact Found ---\nName: {cont['name']}\nPhone: {cont['phone']}\nEmail: {cont['email']}")
+                found_contact = True 
+                break 
+        if not found_contact:
+                print("Contact not found.")
+    elif i=="view":
+        for index,cont in enumerate(contacts):
+            a1=cont["name"]
+            a2=cont["phone"]
+            a3=cont["email"]
+            print(f"{index+1}.\n\nname:{a1}\nphone_number:{a2}\nemail:{a3}\n\n")
+    else:
+        print("Invalid input please enter again")
+</code></pre>
+
+</body>
+</html>
